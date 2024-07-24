@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert</title>
+</head>
+
+<body>
+
+    <input type="text" id="position" placeholder="Enter position">
+    <input type="text" id="newValue" placeholder="Enter Number">
+    <button onclick="add()">Add Value</button>
+    <script>
+
+
+        function add(){
+            var arr = [20, 30, 40, 50, 60, 70, 80];
+            var newValue1 = parseInt(document.getElementById("newValue").value);
+            var pos =  parseInt(document.getElementById("position").value);
+            var size = arr.length-1;
+            console.log(size);
+            for(let i=size; i>=0; i--){
+                   if(i>=pos){
+                    arr[i+1] = arr[i];
+                    if(i==pos) {
+                        arr[i] = newValue1;
+                    }
+                }
+            }
+            console.log(arr);
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

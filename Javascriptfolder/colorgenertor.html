@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+    <style>
+        .themecolor{
+              display: flex;
+              align-items: center;
+              justify-content: center;   
+              height: 100vh;
+        }
+       
+        .box{ 
+            background-color: rgb(236, 142, 19);
+            width:400px;
+            height:150px;
+            text-align: center;
+        }
+          
+        #btn{
+            background-color: black;
+            color:white;
+            padding: 10px;
+            outline: none;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+     <div class="themecolor">
+        <div class="box" id="colortheme">
+            <span >
+                    <h1 id="color">#562834</h1>
+            </span>
+            <button id="btn">Color Generator</button>
+        </div>
+     </div>
+
+
+
+
+    <script>
+     const get = () =>{
+        const randnumber = Math.floor(Math.random()*16777215);
+        const randomcode = "#" + randnumber.toString(16);
+        document.body.style.backgroundColor = randomcode;
+        document.getElementById('color').innerText = randomcode;
+     };
+
+
+    document.getElementById('btn').addEventListener('click', get);
+      
+    get();
+
+    </script>
+
+</body>
+</html>

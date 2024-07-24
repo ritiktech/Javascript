@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+ <input type="number" id="number">
+ <button onclick="tables()">Submit</button>
+<br>
+<br>
+ <hr>
+ <hr>
+ <br>
+ <br>
+<!-- 
+ Write a program to calculate the power of a number without using the Math.pow() function. -->
+
+ <input type="number" id="num">
+ <input type="number" id="power">
+ <button onclick="Findpower()">Submit</button>
+
+
+<script>
+
+
+    //    function tables(){
+    //     var number = document.getElementById("number").value;
+    //     for(var i=1; i<=10; i++ ){
+    //         var table = number * i;
+    //         document.write(table+"<br>");
+    //     }
+    // }
+
+
+//Write a program to calculate the power of a number without using the Math.pow() function.
+
+    function Findpower(){
+        var num = document.getElementById("num").value;
+        var pow = document.getElementById("power").value;
+
+        var total = num**pow;
+        document.write(total);
+    }
+
+
+    //Write a program to check if a given number is a perfect number.
+ 
+    var num = 4960;
+    var sum = 0;
+
+    for(var i=1; i<=(num/2); i++){
+        if(num%i==0){
+            sum+=i;
+        }
+    }
+
+   if(num==sum){
+    document.write("this is a perfect number");
+   }else{
+    document.write("this is not a perfect number");
+   }
+    </script>
+</body>
+</html>

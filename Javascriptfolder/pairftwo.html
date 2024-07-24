@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var sum = 11;
+        var i = 0;
+        var r = arr.length-1;
+        var c = 0;
+
+        while(i<r){
+            if(arr[i]+arr[r]>sum) {
+                r--;
+            }else if(arr[i]+arr[r]<sum){
+                i--;
+        }else{
+            document.write(`${arr[i]} ${arr[r]} = ` + (arr[i]+arr[r]) );
+            i++;
+        }
+        document.write("<br>");
+    }
+
+    </script>
+
+
+
+</body>
+
+</html>

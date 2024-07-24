@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power</title>
+  </head>
+  <body>
+    <script>
+      function power(x, n) {
+        if (n == 0) return 1;
+        let num1 = power(x, n - 1);
+        let num2 = num1 * x;
+        return num2;
+      }
+
+      console.log(power(5, 3));
+
+      let x = 5;
+      let num = 1;
+      for (let i = 3; i > 0; i--) {
+        num = num * x;
+      }
+
+      console.log(num);
+
+      let arr = [10, 20, 30, 40, 50, 60, 70, 90];
+      let len = arr.length;
+      console.log(len);
+      let start = 0;
+      function show(start, end) {
+        if (start < end) {
+          console.log(arr[start]);
+          show(start + 1, end);
+        }
+      }
+
+      show(start, len);
+
+      console.assert("<br>");
+
+      function displayArr(start) {
+        if (start == arr.length) return;
+        console.log(arr[start]);
+        displayArr(start + 1);
+        console.log(arr[start]);
+      }
+
+      displayArr(start);
+    </script>
+  </body>
+</html>

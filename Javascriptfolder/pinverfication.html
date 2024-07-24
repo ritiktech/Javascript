@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 5%;
+            overflow: hidden;
+        }
+
+        form {
+            padding: 20px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+        <label for="">Enter Your Pin</label>
+        <br>
+        <br>
+        <input type="text" id="pincode" placeholder="Enter Your Pin">
+        <span id="error"></span>
+        <br>
+        <br>
+        <button onclick="verifyClick()">Submit</button>
+    </form>
+
+
+    <script>
+
+
+
+var counter = 0;
+        function verifyClick() {
+            event.preventDefault();
+            let text = document.getElementById("pincode").value;
+            var pinNumber = 2345;
+           
+
+            if(text!=pinNumber){
+                counter++;
+                if(counter>=3){
+                    document.getElementById("error").innerHTML = "You have been blocked!";
+                    document.getElementById("pincode").disabled = true;
+                }else{
+                    document.getElementById("error").innerHTML = "<font color='red'>Please Enter the correct Pin</font>"
+                }
+            }else{
+                alert("Thank you for providing the right password!")
+            }
+
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

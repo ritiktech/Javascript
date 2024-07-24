@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxCharater</title>
+</head>
+<body>
+
+     <script>
+   
+     let str = "Hello";
+     let objstr = {};
+     let maxchar = "";
+
+     for(let i=0; i<str.length; i++){
+        let key = str[i];
+        if(!objstr[key]){
+            objstr[key] = 0;
+            // console.log(objstr[key]);
+        };
+        objstr[key]++;
+        if(maxchar == "" || objstr[key]>objstr[maxchar]){
+           maxchar = key;
+        }
+     }
+     console.log(maxchar);
+
+
+
+    </script>
+    
+</body>
+</html>

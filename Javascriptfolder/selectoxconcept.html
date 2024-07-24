@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body onload="bodyload()">
+
+    <div class="container mt-5">
+
+        <input type="text" id="productlanguage" class="form-control">
+        <button class="btn btn-primary mt-2 p-2" onclick="add()">Add</button>
+
+    </div>
+
+
+    <div class="container mt-5">
+        <h1>Selec Your Favourite Language</h1>
+        <span id="count" class="btn btn-primary m-2"></span>
+        <select name="" id="categories" class="form-select" aria-label="Default select example">
+
+        </select>
+        <button class="btn btn-danger mt-2 p-2" onclick="clickdelete()">Remove</button>
+    </div>
+
+
+
+    <script>
+
+        var languages = ["ALL", "HTML", "CSS", "PHP", "JAVASCRIPT"];
+        function show() {
+            document.getElementById("categories").innerHTML = "";
+            for (var item of languages) {
+                var opt = document.createElement("option");
+                opt.text = item;
+                opt.value = item;
+                document.getElementById("categories").appendChild(opt);
+            }
+           document.getElementById("count").innerHTML = languages.length;
+        }
+
+        function bodyload() {
+            show();
+        }
+
+        function add() {
+            var lcode = document.getElementById("productlanguage").value;
+            var cityIndex = languages.indexOf(lcode);
+            console.log(cityIndex);
+                if(cityIndex>=0){
+                    alert("PRoduct Already Exits");
+                } else {
+                    languages.push(lcode);
+                    alert("Language add Succesfully")
+                    show();
+                }
+        }
+
+
+        function clickdelete() {
+            var selectlanguages = document.getElementById("categories").value;
+            var finalresult = languages.indexOf(selectlanguages);
+            languages.splice(finalresult, 1);
+            show();
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

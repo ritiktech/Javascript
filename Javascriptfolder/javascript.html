@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body >
+
+ <form action="">
+    <dd>
+        <dt>Name</dt>
+        <dt><input type="text" name="pay"></dt>
+    </dd>
+    <dd>
+        <dt>Email</dt>
+        <dt><input type="text" name="pay"></dt>
+    </dd>
+    <dd>
+        <dt>Password</dt>
+        <dt><input type="text" name="pay"></dt>
+    </dd>
+    <dd>
+        <dt>Password</dt>
+        <dt><input type="text" name="pay"></dt>
+    </dd>
+    <dd>
+        <dt><button onclick="show()">Read More</button></dt>
+    </dd>
+
+     <br>
+    <dd>
+        <dt><input type="button" id="del" ></dt>
+        <br>
+        <br>
+        <dt><button onclick="shows()">Delete</button></dt>
+    </dd>
+ </form>
+
+
+
+<script type="text/javascript">
+
+document.getElementById("del").value = "Delete";
+function show(){
+     flag =  document.getElementsByName("pay");
+    alert(flag.length);
+}
+
+
+function shows(){
+   var flag = confirm("Data Will be Delete");
+
+   if(flag==true){
+    document.write("<b> <font size='25' color='red'> Data Will be Deleted </font></b>")
+   }else{
+    document.write("<b> <font size='25' color='green'> Data is Cancelled </font></b>")
+   }
+}
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

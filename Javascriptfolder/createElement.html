@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element</title>
+</head>
+<body onload="bodyload()">
+     <div id="container"></div>
+     <button onclick="show()">Create Image</button>
+
+
+     <div class="list">
+        <ol></ol>
+     </div>
+
+    <h2>Select your Product</h2>
+     <select  id="listcategories"></select>
+
+ <script>
+
+
+function show(){
+   var pic = document.createElement("img");
+   pic.src = "download (1).jpeg";
+   pic.height = "200";
+   pic.width ="200";
+   pic.alt = "Hotel Image";
+ 
+   document.getElementById("container").appendChild(pic);
+}
+
+
+
+var categories = ["All", "HTML", "CSS", "Javascript", "PHP"];
+
+
+
+   for(var item of categories){
+    var opt = document.createElement("option");
+    opt.text = item;
+    opt.value = item;
+    document.getElementById("listcategories").appendChild(opt);
+   }
+
+
+
+
+function  bodyload(){
+    for(var item of categories){
+        var li = document.createElement("li");
+        li.innerHTML = item;
+        document.querySelector("ol").appendChild(li);
+    }
+}
+
+
+
+
+ </script>
+
+
+</body>
+</html>

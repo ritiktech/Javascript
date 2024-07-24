@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+var arry = [1,5,6,4,8,3,2];
+
+ var max = 0;
+
+ for(var i=0; i<arry.length; i++){
+     if(max<arry[i]){
+        max = arry[i]
+     }
+ }
+
+console.log(max);
+
+
+var n=5;
+
+for(var r=1; r<=n; r++){
+    for(var b=1; b<=n; b++){
+        if(r==1 || r==n || b==1 || b==n){
+            document.write("*")
+        }else{
+        document.write("&nbsp&nbsp")
+        }
+    }
+    document.write("<br>")
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>

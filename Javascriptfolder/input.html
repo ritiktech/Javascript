@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3 {
+            color: #000000;
+        }
+
+        dt,
+        dd {
+            color: black !important;
+        }
+
+
+        .main {
+            background-color: #FF7F50;
+            padding: 20px;
+            border-radius: 2px;
+            box-shadow: 2px 2px #000000;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            border-radius: 5px;
+
+        }
+
+        select {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        #formcontainer {
+            display: none;
+            z-index: 10;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+   
+
+    <div class="conatiner p-3 my-3  text-white">
+        <div class="row">
+            <div class="col-12">
+                <button class="btn-primary" onclick="reg()">Register</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="conatiner p-3 my-3  text-white">
+        <h3>Product Delatils</h3>
+        <dl class="row">
+            <dt class="col-2">Name</dt>
+            <dd class="col-10" id="lname"></dd>
+            <dt class="col-2">Price</dt>
+            <dd class="col-10" id="lprice"></dd>
+            <dt class="col-2">City</dt>
+            <dd class="col-10" id="lcity"></dd>
+            <dt class="col-2">Stock</dt>
+            <dd class="col-10" id="lstock"></dd>
+        </dl>
+        <div>
+            <a href="#register" data-bs-toggle="modal" class="btn-primary p-2">Edit</a>
+        </div>
+    </div>
+ 
+
+
+
+    <div class="container p-3 my-3  text-white">
+        <div class="row">
+            <h1></h1>
+            <div class="col-md-4"></div>
+            <div class="col-md-4  main" id="formcontainer">
+                <form >
+                    <dl>
+                        <dt>Name</dt>
+                        <dd><input type="text" class="form-control" name="" id="pname"></dd>
+                    </dl>
+                    <dl>
+                        <dt>Price</dt>
+                        <dd><input type="text" class="form-control" id="price"></dd>
+                    </dl>
+                    <dl>
+                        <dt>Shipped To</dt>
+                        <dd><select class="form-control" name="" id="city">
+                                <option value="Delhi">Delhi</option>
+                                <option value="Mumbai">Mumbai</option>
+                            </select></dd>
+                    </dl>
+                    <dl>
+                        <dt class="form-switch">Stock</dt>
+                        <dd><input type="checkbox" id="stock"></dd>
+                    </dl>
+
+                    <dl>
+                        <dd><button class="btn-primary" onclick="reg()">Register</button></dd>
+                    </dl>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+
+ 
+        function reg() {
+            document.getElementById("formcontainer").style.display = "block";
+            document.getElementById("lname").innerHTML = document.getElementById("pname").value;
+            document.getElementById("lprice").innerHTML  = document.getElementById("price").value;
+            document.getElementById("lcity").innerHTML  = document.getElementById("city").value;
+
+            stockCheckbox = document.getElementById("stock");
+            statusFlag = "";
+            if (stockCheckbox.checked) {
+                statusFlag = "Available";
+            } else {
+                statusFlag = "Out of Stock";
+            }
+
+            document.getElementById("lstock").innerText = statusFlag;
+
+        }
+
+
+    </script>
+</body>
+
+</html>

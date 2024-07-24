@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read More</title>
+</head>
+
+<body>
+
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, aliquam aliquid provident <span
+            id="dots">...</span><span id="show" style="display: none
+            ;">quisquam ipsam reprehenderit, amet ad, iure at nisi eaque perspiciatis
+            asperiores officiis id odit. Voluptatem sed neque nihil?</span><button class="btn btn-primary"
+            onclick="show()" id="btn">Read More</button></p>
+
+
+
+    <script>
+
+        function show() {
+            var text = document.getElementById("show");
+            var btn = document.getElementById("btn");
+            var dots = document.getElementById("dots");
+            if (dots.style.display ==  "none") {
+                btn.innerHTML = "Read More";
+                dots.style.display = "inline";
+                text.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                text.style.display = "inline";
+                btn.innerHTML = "Read less";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

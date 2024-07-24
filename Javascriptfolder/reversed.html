@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reversed</title>
+  </head>
+  <body>
+    <script>
+      let arry = [10, 20, 30, 40, 50, 60, 70];
+      let len = arry.length;
+
+      //   function show(arry, start, end) {
+      //     if (start < end) {
+      //       let temp = arry[start];
+      //       arry[start] = arry[end];
+      //       arry[end] = temp;
+      //       show(arry, start + 1, end - 1);
+      //     }
+      //   }
+
+      //   show(arry, 0, len);
+      //   console.log(arry);
+
+      // console.log(arry);
+      // for (let i = 0; i < len / 2; i++) {
+      //   let temp = arry[i];
+      //   arry[i] = arry[len - 1 - i];
+      //   arry[len - 1 - i] = temp;
+      // }
+
+      // console.log(arry);
+
+      function pd(n) {
+        if (n == 1) return 1;
+        let fm1 = pd(n - 1);
+        let fn = n * fm1;
+        return fn;
+      }
+
+      console.log(pd(8));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Html</title>
+</head>
+<body>
+
+ <input type="text" placeholder="position" id="position">
+ <input type="text" placeholder="NewValue" id="value">
+ <button id="btn" onclick="show()">Submit</button>
+
+    <script>
+    
+       
+
+      function show(){
+        let data = [10,20,30,40,50,60,70];
+        let newValue = document.getElementById('value').value;
+        let position = document.getElementById('position').value;
+
+     for(let i=data.length-1; i>=0; i--){
+        if(i>=position){
+           data[i+1] = data[i];
+           if(i==position){
+              data[i] = newValue;
+           }
+        }
+     }
+     console.log(data);
+    }
+
+     
+
+
+
+    </script>
+    
+</body>
+</html>

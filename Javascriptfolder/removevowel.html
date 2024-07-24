@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Vowel</title>
+</head>
+<body>
+    
+
+    <script>
+
+      let str = "Lorem Ipsum is simply dummy text of the printing and typesetting industry";
+      
+      function show(str){
+          let vowels = ['a','e','i','o','u'];
+          let result = "";
+        for(let char of str){
+            if(!vowels.includes(char.toLowerCase())){
+                result+=char;
+            }
+        }
+        return result;
+      }
+     
+
+const updateresult = show(str);
+console.log(updateresult);
+
+// Mask the last for digit Number;
+
+let strs = "12345678996586";
+ 
+let data = '#'.repeat(4);
+let result = strs.slice(0,strs.length-4) + data;
+console.log(result)
+
+
+;
+
+
+
+
+    </script>
+
+
+</body>
+</html>

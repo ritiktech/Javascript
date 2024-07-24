@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // var no = 15;
+        // var temp = 0;
+        // for (var i = 2; i <= no - 1; i++) {
+        //     if (no % i == 0) {
+        //         temp = temp + 1;
+        //     }
+        // }
+
+        // if (temp == 0) {
+        //     console.log("This is a Prime Number");
+        // } else {
+        //     console.log("This is not a Prime Number");
+        // }
+
+
+
+
+       
+
+        for (var i=1; i<=10; i++) {
+            var temp = 0;
+            for (var j = 2; j<=i-1; j++) {
+                if (i%j== 0) {
+                    temp = temp + 1;
+                }
+            }
+            if (temp==0) {
+               document.write(i + "<br>");
+            }
+        }
+
+
+            var a=0;
+            var b=1;
+            var c;
+
+          for(var i=0;i<10;i++){
+              c=a+b;
+              console.log(c);
+              a=b;
+              b=c;
+          }
+
+
+
+          
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

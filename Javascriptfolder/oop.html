@@ -1,0 +1,44 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP ()</title>
+</head>
+<body>
+    <script>
+    class employee{
+        constructor(name,Salary,Ta){
+            this.name = name;
+            this.Salary = Salary;
+            this.ta = Ta;
+        }
+      emp(){
+        document.write(`${this.name} <br/>${this.Salary} <br/>${this.ta} <br/>`);
+      }
+
+    }
+
+    class Manager extends employee{
+    
+        mag(){
+            this.hr = 5000;
+            document.write(`${this.name} = ${this.Salary+this.ta+this.hr}<br/>`);
+            // document.write(this.Salary + this.ta,"<br/>");
+        }
+    }    
+
+
+    str = new Manager('Ritik',50000,5200);
+    str.mag();
+    str.emp();
+
+    </script>
+
+</body>
+</html>

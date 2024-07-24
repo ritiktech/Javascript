@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+<body onload="bodyload()">
+
+    <div class="col-3 m-5">
+        <select class="form-select" onchange="categoryChanged()" id="listcategory">
+        </select>
+    </div>
+
+
+    <div class="col-3 m-5">
+        <select class="form-select"  id="lstProduct">
+        </select>
+    </div>
+   
+    <script>
+        var category = ["Select Category", "Electronic", "Footwear"];
+        var electronic = ["Select Electronic Product", "Sony TV", "Mobile"];
+        var footwear = ["Select Footwear", "Nike Casuals", "Lee boot"];
+        var product = ["Select Product"];
+        
+
+      function loadcategory(){
+        
+     var categorylist = document.getElementById("listcategory");
+ 
+     for(var item of category){
+        var option = document.createElement("option");
+         option.text = item;
+         option.value = item;
+         categorylist.appendChild(option);
+     }
+
+      }
+     
+
+      function loadProduct(){
+        var productlst = document.getElementById("lstProduct");
+        productlst.innerHTML = "";
+              for(var item of product){
+                var option = document.createElement("option");
+                option.text = item;
+                option.value = item;
+                productlst.appendChild(option);
+              }
+      } 
+      
+
+ function categoryChanged(){
+    var categoryName = document.getElementById("listcategory").value;
+    switch(categoryName){
+            case "Electronic":
+            product = electronic;
+            loadProduct();
+            break;
+            case "Footwear":
+            product = footwear;
+            loadProduct();
+            break;
+            default:
+            product = ["Please Select a Category"];
+            loadProduct();
+            break;
+    }
+ }
+
+      function bodyload(){
+        loadcategory();
+        loadProduct();
+      }
+
+    </script>
+</body>
+</html>

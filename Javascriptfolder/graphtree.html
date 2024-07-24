@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class graph{
+            constructor(){
+                this.data = {
+                };
+            }
+
+            addvertix(vertix){
+               if(!this.data[vertix]){
+                this.data[vertix] = [];
+               }
+            }
+
+            addvalue(v1,v2){
+                if(!this.data[v1]){
+                    this.addvertix(v1);
+                }
+
+                if(!this.data[v2]){
+                    this.addvertix(v2);
+                }
+
+                this.data[v1].push(v2)
+                this.data[v2].push(v1)
+            }
+
+        }
+
+
+        let graph1 = new graph();
+        graph1.addvertix("A");
+        graph1.addvertix("B");
+        graph1.addvertix("C");
+        graph1.addvertix("D");
+        graph1.addvalue("A","B");
+        graph1.addvalue("A","C");
+        graph1.addvalue("B","C");
+        graph1.addvalue("C","D");
+
+        console.log(graph1);
+
+    </script>
+</body>
+</html>

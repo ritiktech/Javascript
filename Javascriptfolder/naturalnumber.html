@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="a">
+    <button onclick="count()">Submit</button>
+
+    <script>
+
+    //    var num = prompt("enter the Value");
+    //    var sum = 0;
+    //    for(let i=1; i<=num; i++){
+    //     sum+=i;
+    //    }
+
+    //    document.write(sum);
+
+
+
+ //  write a programn to count the number of digits in a given number
+
+
+
+ function count(){
+      var x = document.getElementById("a").value;
+      var temp; c=0;
+      temp = x;
+      while(temp!=0){
+        c=c+1;
+        temp = parseInt(temp/10);
+      }
+      console.log(c);
+ }
+
+
+ //Write a program to calculate the sum of the digits of a given number.
+
+
+
+   var num = prompt("Enter the Value");
+   var temp = num;
+   var sum = 0;
+
+   while(temp>0){
+    var r = temp%10;
+    sum+=r;
+    temp = parseInt(temp/10);
+   }
+
+   document.write(sum);
+
+
+
+    </script>
+    
+</body>
+</html>

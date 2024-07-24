@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArmStrong Number</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        var number = prompt("enter a Value");
+        var temp = number;
+        var sum = 0;
+        var length = number.toString().length;
+
+        while (temp > 0) {
+            var digit = temp % 10;
+            sum += digit ** length;
+            temp = parseInt(temp / 10);
+        }
+
+    if (number==sum) {
+        console.log(`${number} is an armstrong number`)
+    } else {
+        console.log(`${number} is not an armstrong number`);
+    }
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

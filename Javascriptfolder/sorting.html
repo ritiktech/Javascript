@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting</title>
+</head>
+
+<body>
+
+    <input type="text" id="newElemenet"><br>
+    <br />
+    <button onclick="push()">Add Value</button>
+    <button onclick="pop()">Sub Value</button>
+    <button onclick="display()">Sub Value</button>
+
+    <script>
+        data = [];
+        currentsize = data.length;
+        function push() {
+            newvalue = document.getElementById('newElemenet').value;
+            data[currentsize] = newvalue;
+            currentsize += 1;
+        }
+
+        function pop() {
+            if (currentsize > 0) {
+                currentsize -= 1;
+                data.length = currentsize;
+
+            } else {
+                alert('stack already empty')
+            }
+        }
+
+
+
+      function display(){
+        for(let i=0; i<data.length; i++){
+            console.log(`${i} ${data}`);
+        }
+      }
+
+
+
+    </script>
+
+</body>
+
+</html>

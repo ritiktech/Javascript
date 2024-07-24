@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack</title>
+</head>
+<body>
+    
+<div id="text">
+
+</div>
+
+
+
+<script>
+
+const data = [
+  {name:"Ritik", age:"25", course:"DSA" },
+  {name:"Sangram", age:"15", course:"PWD" },
+];
+
+
+function getdata(){
+  setTimeout(()=>{
+    let output = "";
+    data.forEach((element, index) => {
+        output+=`<li>${element.name}</li>`
+    })
+    document.getElementById("text").innerHTML = output;
+  },2000)
+    
+}
+
+function createdata(newdata,callback){
+    setTimeout(()=>{
+         data.push(newdata);
+         callback();
+  },5000)
+  
+}
+
+
+createdata({name:"Pawan", age:"15", course:"PWD" },getdata)
+
+
+
+let arry = [ 
+    [1,2,3,4],
+    [1,2,3,4],
+    [1,2,89, 588, 4],
+    [1,2,3,4],
+];
+
+
+for(let i=0; i<arry.length; i++){
+    for(let j=0; j<arry[i].length; j++){
+        document.write(arry[i][j])
+    }
+    document.write("<br>");
+}
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

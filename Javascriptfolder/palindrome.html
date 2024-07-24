@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <script>
+       
+    //    function Palindrome(str){
+    //      let start = 0;
+    //      let end = str.length - 1;
+    //      while(start<end){
+    //         if(str[start]!== str[end]){
+    //             return false;
+    //         }
+    //         start++;
+    //         end--;
+    //      }
+    //      return true;
+    //    }
+
+
+       function Palindrome(str,start,end){
+        if(start<end){
+            if(str[start]!== str[end]){
+                return false;
+            }
+            Palindrome(str,start-1, end-1);
+        }
+        return true;
+       }
+
+   let str = "level"
+   console.log(Palindrome(str,0,str.length-1));
+
+
+
+   // Second Method
+
+   let strs = "level"
+   function Palindromes(str){
+     let char = "";
+     for(let i=str.length-1; i>=0; i--){
+        char+=str[i];
+     }   
+     return char;
+   }
+
+  
+
+ let result = Palindromes(strs);
+ 
+ if(result === strs){
+    console.log('String is a Palindrome');
+ }else{
+    console.log('String is not a Palindrome');
+}
+
+    </script>
+</body>
+</html>

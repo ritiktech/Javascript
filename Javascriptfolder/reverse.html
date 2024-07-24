@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arry = [20, 30, 40, 50, 60, 70, 80, 90];
+      let len = arry.length - 1;
+
+      function Reverse(data, start, end) {
+        console.log(data);
+        if (start <= end) {
+          let temp = data[start];
+          data[start] = data[end];
+          data[end] = temp;
+          Reverse(data, start + 1, end - 1);
+        }
+      }
+
+      Reverse(arry, 0, len);
+
+      console.log(arry);
+    </script>
+  </body>
+</html>

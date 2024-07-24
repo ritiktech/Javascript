@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <input type="number" id="root">
+    <button onclick="fact()">Submit</button>
+
+    <script>
+
+
+        // let data = [1,2,3,4,5,6,8,5,7];
+
+        // let rs = data.slice(0,4);
+        // console.log(rs);
+
+        function show(arry) {
+            let left = 0;
+            let right = arry.length - 1;
+            while (left < right) {
+                sum = arry[left] + arry[right];
+                if (sum === 0) {
+                    return [arry[left], arry[right]];
+                } else if (sum > 0) {
+                    right--;
+                } else {
+                    left++;
+                }
+            }
+
+        }
+
+        let result = show([-7, -5, -3, 2, 0, 1, 2, 3, 4, 6, 8]);
+        console.log(result);
+
+
+        function fact() {
+            let el = document.getElementById('root').value;
+            var sum = 1; 
+            for (let i=el; i > 1; i--) {
+                sum *= i;
+            }
+            console.log(sum);
+        }
+
+
+
+
+
+// let arry = [10,20,102,15,0,15,1,4,50,10,20,30];
+
+//    var count = 0;
+// for(let i=0; i<arry.length; i++){
+//     console.log(arry[i]+"vdvrf");
+//      count++;
+// }
+
+
+// console.log(count);
+
+var data = [];
+var current  = data.length;
+var count = 0;
+
+
+function push(value){
+    data[current] =  value;
+    current+=1;
+}
+
+push(50);
+push(40);
+
+console.log(data);
+
+    </script>
+</body>
+
+</html>

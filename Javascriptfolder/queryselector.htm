@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuerySelectorAll</title>
+    <style>
+        .btn-red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="btncontainer">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, dicta.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <button class="btn">Red</button>
+        <button class="btn">Blue</button>
+        <button class="btn">Green</button>
+        <button class="btn">Orange</button>
+        <button class="btn">Yellow</button>
+    </div>
+    
+<script>
+
+let el = document.getElementById('btncontainer');
+
+    el.addEventListener('click', (e) => {
+
+        let btnresult = e.target.innerText;
+        if (btnresult === "Red") {
+            e.target.classList.toggle("btn-red");
+        } else if (btnresult === "Green") {
+            e.target.classList.toggle("btn-red");
+        }
+
+})
+
+
+let x = document.getElementById('btncontainer').querySelectorAll(".btn")[0].style.color = "Green";
+console.log(x);
+
+
+
+
+     
+
+</script>
+
+
+
+
+</body>
+</html>

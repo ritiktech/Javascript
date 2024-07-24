@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+ 
+
+ .slider{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+ }
+
+     img{
+        height: 500px;
+        width: 70;
+        margin: 20px;
+     }
+
+ #rightmenu{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top:0;
+    right:0;
+}
+
+#leftmenu{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+
+#popup{
+    width: 100%;
+    height:100vh;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top:0;
+    left:0;
+    text-align: center;
+    z-index: 9999;
+}
+
+    </style>
+</head>
+<body>
+    
+<div class="slider">
+    <h1>Photo 1</h1>
+    <img src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1nfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+        alt="">
+</div>
+
+<div class="slider">
+    <h1>Photo 2</h1>
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/ba/29/5c/img-worlds-of-adventure.jpg?w=1200&h=-1&s=1"
+        alt="">
+</div>
+
+
+<div class="slider">
+    <h1>Photo 3</h1>
+    <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/09/c3/33/97.jpg" alt="">
+</div>
+
+
+
+
+ <script>
+    
+     function includepophtml(){
+        let html = '<div id="popup"><span id="close"><img id="pop" src="" alt=""></span><img id="leftmenu" src="data:image/png;base64,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" alt=""><img src="https://cdn-icons-png.flaticon.com/512/3031/3031716.png" id="rightmenu" alt=""><img src="mainpopimage" alt=""></div>';
+        let popdiv = document.createElement("div");
+        popdiv.innerHTML = HTML;
+        document.body.insertBefore(popdiv, document.body.firstChild);
+     }
+
+ </script>
+
+
+
+
+</body>
+</html>

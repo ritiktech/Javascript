@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Array</title>
+  </head>
+
+  <body>
+    <h1>Searching</h1>
+    <h1>Sort</h1>
+    <h1>Reverse</h1>
+
+    <input type="text" id="root" />
+    <button onclick="show()">Submit</button>
+    <script>
+      let data = [3, 2, 5, 4, 6, 7];
+      let result = data.sort();
+      result.reverse();
+      console.log(result);
+
+      let arr = [6, 5, 4, 8, 9, 7, 2, 3];
+
+      for (i = 0; i < arr.length; i++) {
+        for (j = 0; j < arr.length; j++) {
+          if (arr[j] > arr[j + 1]) {
+            let temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+            console.log(arr[j]);
+          }
+        }
+      }
+
+      console.log(arr);
+
+      // Finding
+
+      function show() {
+        let index;
+        let datas = [6, 5, 4, 8, 9, 7, 2, 3];
+        let el = document.getElementById("root").value;
+        for (let i = 0; i < arr.length; i++) {
+          if (datas[i] === parseInt(el)) {
+            index = i;
+            break;
+          }
+        }
+        console.log(index);
+      }
+
+      let b = 30;
+      let a = 40;
+
+      temp = b;
+      b = a;
+      a = temp;
+
+      console.log(b, a);
+    </script>
+  </body>
+</html>

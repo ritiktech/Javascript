@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longest SubString</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+
+
+         function  lengthofsubstringcharater(s){
+            if (!s) {
+                return 0;
+            }
+
+          
+            let start = 0;
+            let end = 0;
+            let mlength = 0;
+            let charateruique = new Set();
+
+            while (end < s.length) {
+                if (!charateruique.has(s[end])) {
+                    charateruique.add(s[end]);
+                    end++;
+                    
+                    mlength = Math.max(mlength,charateruique.size);
+                } else {
+                    charateruique.delete(s[start]);
+                    start++;
+                }        
+            }
+            return mlength;
+        }
+
+
+        const result = lengthofsubstringcharater("abcabb");
+
+        console.log(result)
+
+
+
+
+    </script>
+
+</body>
+
+</html>

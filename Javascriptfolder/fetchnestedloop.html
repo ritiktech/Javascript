@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        H5{
+  word-wrap: break-word !important;
+  text-align: center;
+  text-transform: uppercase;
+}
+    </style>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<body>
+    <button class="btn btn-primary m-5" onclick="showcard()">Card</button>
+ <div class="container d-flex flex-wrap" id="catelog">
+ </div>
+
+
+ <script>
+       
+       function showcard(){
+            fetch("https://fakestoreapi.com/products").then(function(resp){
+                 return resp.json();
+            }).then(function(data){
+             for(var item of data){
+                var div = document.createElement("div");
+                div.className = "card m-2 p-2";
+                div.style.width = "333px";
+                div.innerHTML = `<img src=${item.image} width="300" height="200" alt="image" class="card-img-top">
+                <div class="card-header" style="height:140px">
+                <h5>${item.title}</h5>
+                </div>
+                <div class="card-body">
+                    <dl>
+                        <dt>Price</dt>
+                        <dd>${item.price}</dd>
+                        </dl>
+                    </div>
+                `
+                document.getElementById("catelog").appendChild(div);
+
+             }
+            
+                })
+
+
+       }
+
+
+ </script>
+</body>
+</html>

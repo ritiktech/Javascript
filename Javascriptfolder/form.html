@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <style>
+    .mainpop {
+      padding: 20px;
+      position: fixed;
+      top: 50px;
+      left: 25%;
+      display: none;
+      z-index: 99;
+      background-color: #008080;
+      width: 40%;
+      box-shadow: 4px 4px 12px #0000;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    dt,
+    dd {
+      font-size: 16px;
+      text-transform: uppercase;
+      color: white
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12">
+
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Customer Info
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <form action="">
+                  <label for="">Customer Name</label>
+                  <input type="text" class="form-control" id="name">
+                  <label for="">Check in Date</label>
+                  <input type="date" class="form-control" id="Date">
+                  <label for="">Total No. of Days</label>
+                  <input type="number" class="form-control" id="day">
+                  <label for="">Total No of Persons</label>
+                  <input type="number" class="form-control" id="Person">
+                </form>
+
+
+
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Select Room Type
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body d-flex justify-content-between">
+                <div class="partroom m-5">
+                  <img src="download (1).jpeg" alt="hotel" width="400" height="200">
+                  <br>
+                  <input type="radio" name="f1" id="deluxroom" value="Delux Room">Delux Room 2500
+                </div>
+
+                <div class="partroom m-5">
+                  <img src="1.jpeg" alt="hotel" width="400" height="200">
+                  <br>
+                  <input type="radio" name="f1" id="suiteroom" value="Suite Room">Suite Room 4000
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Select Amenities
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body  d-flex justify-content-between">
+                <div class="partroom m-5">
+                  <img src="download (1).jpeg" alt="hotel" width="400" height="200">
+                  <br>
+                  <input type="checkbox" name="f1" value="A/C" id="ac">A/C
+                </div>
+
+                <div class="partroom m-5">
+                  <img src="1.jpeg" alt="hotel" width="400" height="200">
+                  <br>
+                  <input type="checkbox" name="f2" value="locker" id="locker">Locker
+                </div>
+
+
+              </div>
+            </div>
+
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour"
+                  aria-expanded="true" aria-controls="collapsefour">
+                  Advance Amount
+                </button>
+              </h2>
+              <div id="collapsefour" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <form action="">
+                    <label for="">Advance Amount</label>
+                    <input type="number" class="form-control" id="advanceamount" required>
+                    <span id="errorda"></span>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+            <did class="btn d-flex justify-content-center">
+              <button class="btn btn-success m-5" onclick="popbox()">Regsiter</button>
+            </did>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+
+
+
+  <div class="container mainpop" id="popox1">
+    <div class="col-12">
+      <h1 class="mb-3">Customer Information</h1>
+      <dl>
+        <dt>Customer Name</dt>
+        <dd id="cn"></dd>
+        <dt>Date</dt>
+        <dd id="date"></dd>
+        <dt>Days</dt>
+        <dd id="days"></dd>
+        <dt>Persons</dt>
+        <dd id="person"></dd>
+        <dt>Room Type</dt>
+        <dd id="rt"></dd>
+        <dt>Amenities</dt>
+        <dd id="am"></dd>
+        <dt>Total</dt>
+        <dd id="finalamount"></dd>
+      </dl>
+      <di class="modal-footer">
+        <button data-bs--dismiss="modal" class="btn btn-primary">OK</button>
+      </di>
+    </div>
+  </div>
+
+
+
+  <script>
+
+    function popbox() {
+
+
+
+      
+      document.getElementById("popox1").style.display = "block";
+
+      document.getElementById("cn").innerHTML = document.getElementById("name").value;
+      document.getElementById("date").innerHTML = document.getElementById("Date").value;
+      var days = document.getElementById("days").innerHTML = document.getElementById("day").value;
+      document.getElementById("person").innerHTML = document.getElementById("Person").value;
+
+
+
+
+
+
+
+
+      roomtype = "";
+      costofroom = 0;
+      optdelux = document.getElementById("deluxroom");
+      optsuite = document.getElementById("suiteroom");
+
+
+      if (optdelux.checked) {
+        roomtype = optdelux.value;
+        costofroom = 2500;
+
+      }
+
+
+
+      if (optsuite.checked) {
+        roomtype = optsuite.value;
+        costofroom = 4000;
+      }
+
+
+
+      document.getElementById("rt").innerHTML = roomtype;
+
+
+
+
+
+
+
+
+      roomamenities = "";
+      costofextra = 0;
+      optac = document.getElementById("ac");
+      optlocker = document.getElementById("locker");
+
+
+      if (optac.checked) {
+        roomamenities += optac.value;
+        costofextra += 1000;
+      }
+
+      if (optlocker.checked) {
+        roomamenities += optlocker.value;
+        costofextra += 300;
+      }
+
+      var subtotal = costofroom + costofextra;
+      var netamount = subtotal * days;
+
+      document.getElementById("am").innerHTML = roomamenities;
+
+
+
+
+      var advanceamounts = document.getElementById("advanceamount").value;
+      var error = document.getElementById("errorda");
+      var finalamounts = document.getElementById("finalamount");
+      var lastfinalamount = ""
+      var Persons = document.getElementById("Person").value;
+  
+      if (advanceamounts == "") {
+        error.innerHTML = "<font color='red'>Adavnace amount is Mandatory</font>";
+      } else { 
+        lastfinalamount = netamount - advanceamounts;
+        if (Persons>2) {
+          console.log(Persons);
+          var finalperson = (Persons-2)*1000; 
+          finalamounts.innerHTML = lastfinalamount + finalperson;
+        } else {
+          finalamounts.innerHTML = lastfinalamount
+        }
+
+
+
+      }
+
+
+
+
+
+
+
+    }
+
+  </script>
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
