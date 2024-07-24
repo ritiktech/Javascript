@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    var arry = [10, 20, 30, 40, 50, 60, 80, 90];
+    var positon = 3;
+    var value = 110;
+
+    for (let i=arry.length-1; i>=0; i--){
+        if (i>=positon) {
+            arry[i+1] = arry[i];
+            if (i==positon) {
+                arry[i] = value;
+            }
+        }
+    }
+
+
+console.log(arry);
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

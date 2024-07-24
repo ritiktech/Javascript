@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="username"><b>Name</b></label>
+        <input type="text" id="name" onblur="verify()">
+        <span id="nameerror"></span>
+        <br>
+        <br>
+        <label for="useremail"><b>Email</b></label>
+        <input type="email" id="email" onkeyup="verifyemail()">
+        <span id="emailerror"></span>
+        <br>
+        <br>
+        <label for="userphone"><b>Phone</b></label>
+        <input type="text" id="phone">
+        <span id="errorphone"></span>
+        <br>
+        <br>
+        <label for="userpassword"><b>Password<b></label>
+        <input type="password" id="password">
+        <span id="errorpwd"></span>
+        <br>
+        <br>
+        <button onclick="formsubmit()">Submit</button>
+    </form>
+    <script>
+        
+      
+      
+       var phone = document.getElementById("phone").value;
+       var phone = document.getElementById("password").value;
+       
+       var errorphone = document.getElementById("errorphone");
+       var emailerror = document.getElementById("emailerror");
+       var errorpwd = document.getElementById("errorpwd");
+
+        
+        function verify(e){
+            event.preventDefault()
+            var name =  document.getElementById("name").value;
+            var errorname = document.getElementById("nameerror");
+
+            if(name == ""){
+                errorname.innerHTML = "<font color='red'>User Name Required</font>"
+            }else{
+                errorname.innerHTML = "";
+            }
+        }
+
+
+        function verifyemail(e){
+            event.preventDefault()
+            var email = document.getElementById("email").value;
+            var emailerror = document.getElementById("emailerror");
+            var regexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+            if(email.match(regexp)){
+                emailerror.innerHTML = "";
+            }else{
+                emailerror.innerHTML = "<font color='red'>Invaild Email id</font>"
+            }
+        }
+
+        function verifyemail(e){
+            event.preventDefault()
+            var email = document.getElementById("email").value;
+            var emailerror = document.getElementById("emailerror");
+            var regexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+            if(email.match(regexp)){
+                emailerror.innerHTML = "";
+            }else{
+                emailerror.innerHTML = "<font color='red'>Invaild Email id</font>"
+            }
+        }
+        
+    </script>
+</body>
+</html>

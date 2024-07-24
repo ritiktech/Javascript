@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Duplicate Value</title>
+  </head>
+  <body>
+    <script>
+      let arry = [10, 20, 30, 50, 60, 60, 70, 80];
+
+      let result = [];
+
+      //   let num1 = new Set([...arry]);
+      //   num1.add(90);
+      //   num1.delete(20);
+      //   console.log(num1);
+
+      arry.forEach((item) => {
+        if (result.indexOf(item) == -1) {
+          result.push(item);
+        }
+      });
+
+      console.log(result);
+
+      let a = 10;
+      let b = 20;
+
+      a = a + b;
+      b = a - b;
+      a = a - b;
+
+      console.log(a);
+      console.log(b);
+    </script>
+  </body>
+</html>

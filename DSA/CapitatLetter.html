@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // for (let i = 65; i <= 90; i++) {
+      //   console.log(String.fromCharCode(i));
+      // }
+
+      // for (let i = 97; i <= 122; i++) {
+      //   console.log(String.fromCharCode(i));
+      // }
+
+      // merge Two Array
+
+      // let arry = [10, 20, 30, 40, 50, 60, 70, 90];
+      // let arry1 = [1, 2, 3, 4, 5, 6, 7, 9];
+      // let arry2 = [];
+      // let len = arry.length;
+      // for (let i = 0; i < len; i++) {
+      //   arry2[i] = arry[i];
+      // }
+
+      // for (let i = 0; i < arry1.length; i++) {
+      //   arry2[i + len] = arry1[i];
+      // }
+
+      // console.log(arry2);
+
+      // merge Two UnSorted Array
+
+      let data1 = [5, 7, 30, 40, 48, 60, 80];
+      let data2 = [1, 2, 3, 4, 6, 9, 50, 70];
+      let data3 = [];
+
+      let d1 = 0;
+      let d2 = 0;
+      let d3 = 0;
+
+      while (d1 < data1.length && d2 < data2.length) {
+        if (data1[d1] < data2[d2]) {
+          data3[d3] = data1[d1];
+          d1++;
+        } else {
+          data3[d3] = data2[d2];
+          d2++;
+        }
+        d3++;
+      }
+
+      while (d1 < data1.length) {
+        data3[d3] = data1[d1];
+        d1++;
+        d3++;
+      }
+
+      console.log(data3);
+
+      // ArmStrong Number
+
+      let number = 253;
+      let temp = number;
+      let sum = 0;
+      while (temp > 0) {
+        var digit = temp % 10;
+        sum = sum + digit ** 3;
+        temp = parseInt(temp / 10);
+        console.log(temp);
+      }
+
+      if (number == sum) {
+        console.log("This Number is ArmStrong");
+      } else {
+        console.log("This Number is not ArmStrong");
+      }
+
+      console.log(sum);
+    </script>
+  </body>
+</html>

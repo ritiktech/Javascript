@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+
+    <ul>
+
+    </ul>
+
+      <button onclick="datashow()">Show</button>
+
+
+
+    <script>
+
+ 
+      datashow = () => {
+    
+        fetch("https://fakestoreapi.com/products").then(resp=>resp.json())
+        .then(data => {
+            for(var item of data){
+                var li = document.createElement("li");
+                var img = document.createElement("img");
+                li.innerHTML = item.title;
+                img.src = item.image;
+                img.height = "50"
+                img.width="50"; 
+
+                li.appendChild(img);
+                 
+                document.querySelector("ul").appendChild(li);
+            }
+        })
+     }
+    
+ 
+    </script>
+</body>
+</html>

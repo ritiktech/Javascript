@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Missing Number</title>
+  </head>
+  <body>
+    <script>
+      let arry = [1, 2, 3, 4, 5, 6, 7, 9, 10];
+      let sum = 0;
+
+      let n = arry.length + 1;
+
+      let totalsum = (n * (n + 1)) / 2;
+      console.log(totalsum);
+
+      for (let i = 0; i < n - 1; i++) {
+        sum += arry[i];
+      }
+
+      console.log(sum);
+      console.log(totalsum - sum);
+    </script>
+  </body>
+</html>
